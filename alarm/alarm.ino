@@ -1,3 +1,11 @@
+/*
+ * NAME: 
+ * LED Alarm System 
+ * Workshop 1
+ * 
+ * 
+ */
+
 void setup() {
   // put your setup code here, to run once:
 
