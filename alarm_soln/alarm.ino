@@ -11,7 +11,9 @@
 #include <NewTone.h>
 
 // Select which PWM-capable pins are to be used.
-const int RED_PIN = 10;
+const int RED_PIN =       10;
+const int GREEN_PIN =     11;
+const int BLUE_PIN =      9;
 
 const int TRIGGER_PIN =   6;  // Arduino pin tied to trigger pin on the ultrasonic sensor.
 const int ECHO_PIN =      7;  // Arduino pin tied to echo pin on the ultrasonic sensor.
@@ -19,7 +21,7 @@ const int MAX_DISTANCE =  100; // Maximum distance we want to ping for (in centi
 
 const int ALARM = 3;
 
-float sinVal; 
+float sinVal;
 int toneVal;
 bool triggered;
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
@@ -27,8 +29,11 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 void setup() { 
   // setup code runs once when the program starts
   
-  //Challenge 1: setup pin modes for the blue and green pins
-  pinMode(RED_PIN, OUTPUT);
+  //set pinModes for RGB strip
+  pinMode(RED_PIN,OUTPUT);
+  pinMode(BLUE_PIN,OUTPUT);
+  pinMode(GREEN_PIN,OUTPUT);
+  pinMode(ALARM, OUTPUT); //Set pinMode for Alarm
 
   //reset lights
   analogWrite(RED_PIN,0);
