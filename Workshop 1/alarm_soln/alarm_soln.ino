@@ -17,7 +17,7 @@ const int BLUE_PIN =      9;
 
 const int TRIGGER_PIN =   6;  // Arduino pin tied to trigger pin on the ultrasonic sensor.
 const int ECHO_PIN =      7;  // Arduino pin tied to echo pin on the ultrasonic sensor.
-const int MAX_DISTANCE =  100; 
+const int MAX_DISTANCE =  100; // Maximum distance we want to ping for (in centimeters).
 
 const int ALARM = 3;
 
@@ -54,7 +54,7 @@ void loop() {
   } else {
     delay(50); //Don't repeatedly check too quickly
 
-     int pingTime = sonar.ping(); //see how long it takes to send a ping and receive it 
+    unsigned int pingTime = sonar.ping(); //see how long it takes to send a ping and receive it 
     unsigned int distance = pingTime/US_ROUNDTRIP_CM; //compute distance based on speed of ping
     Serial.println(distance); //output distance to the serial monitor
     if(distance < MAX_DISTANCE) {
