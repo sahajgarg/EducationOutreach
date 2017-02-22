@@ -51,6 +51,7 @@ void setup()
   }
   interruptSetup(); 
 }
+
 void loop(){
   lcd.clear();
   start: //label 
@@ -98,6 +99,7 @@ void updatebeat(){
     error=1;
   }
 }
+
 boolean connectWiFi(){
   Serial.println("AT+CWMODE=1");
   esp8266.println("AT+CWMODE=1");
@@ -117,6 +119,7 @@ boolean connectWiFi(){
     return false;
   }
 }
+
 void interruptSetup(){     
   TCCR2A = 0x02;     // DISABLE PWM ON DIGITAL PINS 3 AND 11, AND GO INTO CTC MODE
   TCCR2B = 0x06;     // DON'T FORCE COMPARE, 256 PRESCALER 
@@ -124,6 +127,7 @@ void interruptSetup(){
   TIMSK2 = 0x02;     // ENABLE INTERRUPT ON MATCH BETWEEN TIMER2 AND OCR2A
   sei();             // MAKE SURE GLOBAL INTERRUPTS ARE ENABLED      
 } 
+
 ISR(TIMER2_COMPA_vect){                       // triggered when Timer2 counts to 124
   cli();                                      // disable interrupts while we do this
   Signal = analogRead(pulsePin);              // read the Pulse Sensor 
