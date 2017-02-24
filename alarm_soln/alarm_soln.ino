@@ -24,7 +24,7 @@ const int ALARM = 3;
 float sinVal;
 int toneVal;
 bool triggered;
-NewPing sonar(TRIGGER_PIN, ECHO_PIN, 300);
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, 1000);
 
 void setup() { 
   // setup code runs once when the program starts
