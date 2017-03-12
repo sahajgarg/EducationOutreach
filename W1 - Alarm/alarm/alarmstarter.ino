@@ -9,13 +9,9 @@
  *  -Turning the LED a specific color
  */
 
-const int TRIGGER_PIN =   6;  // Arduino pin tied to trigger pin on the ultrasonic sensor.
-const int ECHO_PIN =      7;  // Arduino pin tied to echo pin on the ultrasonic sensor.
-const int MAX_DISTANCE =  100; 
-
-const int ALARM = 3;
-
-NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+const int RED_PIN = 10;
+const int BLUE_PIN = 9; 
+const int GREEN_PIN = 11;
 
 
 //Compute distance in cm by dividing time to receive ping by speed of ping
